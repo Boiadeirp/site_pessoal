@@ -30,7 +30,7 @@
 
     }
     main{
-        border: 3px solid red;
+        border: 3px solid rgb(255, 255, 255);
         padding-top: 20px;
         
     }
@@ -47,6 +47,33 @@
         color: blueviolet;
     }
 
+        .buttons {
+            text-align: right;
+
+
+        }
+        .buttons-visualizacao{
+            font-size: 20px;
+            color: blueviolet;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+
+        .modo_grade{
+            padding-top: 20px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100px;
+        }
+        .modo_grade section {
+            width: 350px;
+
+        }
+
 </style>
 
 <body>
@@ -58,8 +85,14 @@
            Aluno do ensino tecnico
         </p>
     </header>
+    <div class="buttons">
+        <button class="buttons-visualizacao"onclick="mudargrade()">Visualizacao grade</button>
+        <button class="buttons-visualizacao" onclick="mudarlista()">Visualizacao em lista</button>
+      
+    </div>
 
-    <mein>
+
+    <main id="principal">
         <section>
             <h2>
                 Minhas abilidades
@@ -94,9 +127,10 @@
                 <li>Churrasco</li>
                 <li>Mexer com boi</li>
             </ul>
-        </section>
 
-          <section>
+            
+        </section>
+        <section>
             <h2>
                 Contatos
             </h2>
@@ -109,10 +143,21 @@
             </ul>
         </section>
 
+          
+
         <footer>
             &copy; 2025 Henrique. Todos os direitos reservados.
         </footer>
-    </mein>
+    </main>
 
 </body>
+<script>
+        function mudargrade() {
+            const principal = document.getElementById('principal')
+            principal.classList.toggle('modo_grade')
+        }
+        function mudarlista(){
+            alert("boato mudar para LISTA")
+        }
+</script>
 </html>
